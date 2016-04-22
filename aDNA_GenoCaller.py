@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: ASCII -*-
 
-###This program calls genotypes from bam files at positions/regions specified in a bam file while taking into account post mortem damage as estimate by MapDamage.
+###This program calls genotypes from bam files at positions/regions specified in a bed file while taking into account post mortem damage as estimate by MapDamage.
 ###Otherwise the algorithm is the same as GATK Unified Genotype for diploid calls
 ###This version of the program will take any genotype with a low quality heterozygote call (Q<30) and convert to the next best homozygote call
 ###Three files are created:
