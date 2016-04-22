@@ -9,4 +9,4 @@ A vcf file with only those sites with evidence for at least one alternative alle
 A haploid emit all vcf (ish), that gives you the most likely base under a haploid model. If two or more basepairs are tied, the reported allele is randomly chosen.
 
 To run aDNA_GenoCaller type:
-aDNA_GenoCaller.py <indexed bamfile> <bed file> <reference genome> <5C-T mapdamage file> <3G-A mapdamage file>
+aDNA_GenoCaller.py indexed_bamfile bed_file reference_genome 5C-T_mapdamage_file> 3G-A_mapdamage_file
