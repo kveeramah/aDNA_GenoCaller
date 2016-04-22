@@ -1,7 +1,7 @@
 # aDNA_GenoCaller
-aDNA_GenoCaller is a python program that calls genotypes from bam files at positions/regions specified in a bam file while taking into account post mortem damage as estimate by MapDamage
+aDNA_GenoCaller is a python program that calls genotypes from bam files at positions/regions specified in a bed file while taking into account post mortem damage as estimate by MapDamage
 
-This version of the program will take any genotype with a low quality heterozygote call (Q<30) and convert to the next best homozygote call
+This version of the program will take any genotype with a low quality heterozygote call (Q<30) and convert to the next best homozygote call.
 
 Three files are created:
 An emit all vcf file noting the call for all base pairs in the bed file
