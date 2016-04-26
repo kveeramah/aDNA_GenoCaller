@@ -10,4 +10,4 @@ A haploid emit all vcf (ish), that gives you the most likely base under a haploi
 
 To run aDNA_GenoCaller type:
 
-aDNA_GenoCaller.py indexed_bamfile bed_file reference_genome 5CT_mapdamage_file 3GA_mapdamage_file
+./aDNA_GenoCaller.py indexed_bamfile bed_file reference_genome 5CT_mapdamage_file 3GA_mapdamage_file
