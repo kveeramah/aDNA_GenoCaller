@@ -286,15 +286,18 @@ ref=pysam.FastaFile(ref_file)
 
 ###set up various look up dictionaries
 all_dic={}
+all_dic={}
 all_dic['A']=0
 all_dic['C']=1
 all_dic['G']=2
 all_dic['T']=3
+all_dic['N']=-99
 all_dic[0]='A'
 all_dic[1]='C'
 all_dic[2]='G'
 all_dic[3]='T'
 all_dic[-9]='.'
+all_dic[-99]='N'
 
 GL_dic={}
 
@@ -482,7 +485,7 @@ for gg in range(len(SNPlist)):
         for pileupread in pileupcolumn.pileups:
             if not pileupread.is_del and not pileupread.is_refskip:  ##ensure not an indel or duplicate
                 map_list.append(pileupread.alignment.mapping_quality)  ##record mapping quality of read
-                if (pileupread.alignment.mapping_quality>=MQ) and (ord(pileupread.alignment.qual[pileupread.query_position])-33>=BQ):  ###Add base calls meeting the MQ and BQ filters
+                if (pileupread.alignment.mapping_quality>=MQ) and (ord(pileupread.alignment.qual[pileupread.query_position])-33>=BQ) and (REFs[index]<>-99):  ###Add base calls meeting the MQ and BQ filters
                     var_list.append([pileupread.alignment.query_sequence[pileupread.query_position],ord(pileupread.alignment.qual[pileupread.query_position])-33,CT_decay[pileupread.query_position],GA_decay[len(pileupread.alignment.query_sequence)-1-pileupread.query_position]])
 
         ###rescale qualities that are greater than 40 to a max of 40.
