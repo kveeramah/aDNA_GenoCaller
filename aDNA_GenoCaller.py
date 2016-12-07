@@ -405,8 +405,8 @@ fileout2=open(filenameout2,'w')
 fileout3=open(filenameout3,'w')
 
 ###set up output headers
-out1='##fileformat=Custom variant caller for_aDNA, emit all diplod\n'
-out2='##fileformat=Custom variant caller for_aDNA, variable diploid\n'
+out1='##fileformat=VCFv4.1\n'
+out2='##fileformat=VCFv4.1\n'
 out3='##fileformat=Custom variant caller for_aDNA, emit all haploid\n'
 outA='##Caller_arguments=<MappingQuality_filter='+str(MQ)+',BaseQuality_filter='+str(BQ)
 outA=outA+',GenotypeQuality_filter='+str(GQ)+',minRD='+str(min_RD)
@@ -417,7 +417,7 @@ outB='##INFO=<ID=AC,Number=A,Type=Integer,Description="Allele count in genotypes
 outB=outB+'##INFO=<ID=AF,Number=A,Type=Float,Description="Allele Frequency, for each ALT allele, in the same order as listed">\n'
 outB=outB+'##INFO=<ID=MQ,Number=1,Type=Float,Description="mean Mapping Quality (not RMS)">\n'
 outB=outB+'##INFO=<ID=MQ0,Number=1,Type=Integer,Description="Total Mapping Quality Zero Reads">\n'
-outB=outB+'##INFO=<ID=SGC,Description="low GQ heterozygote switched to best homozygote">\n'
+outB=outB+'##INFO=<ID=SGC,Number=1,Type=Integer,Description="low GQ heterozygote switched to best homozygote">\n'
 
 outC='##Time created='+(time.strftime("%H:%M:%S"))+' '+(time.strftime("%d/%m/%Y"))+'\n'
 for i in range(len(ref.lengths)):
